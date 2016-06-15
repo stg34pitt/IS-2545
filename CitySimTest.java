@@ -56,6 +56,33 @@ public class CitySimTest {
         assertFalse(dummy.prefersLocation(Location.SquirrelHill));
 	}
 	
+	//A Professor likes every location - following 4 tests
+	//Create a new Professor
+	//Ensure the prefersLocation method returns true for every location
+	@Test
+	public void testProfessor1() {
+	    Professor dummy = new Professor();
+	    assertTrue(dummy.prefersLocation(Location.ThePoint));
+	}
+		
+	@Test
+	public void testProfessor2() {
+		Professor dummy = new Professor();
+		assertTrue(dummy.prefersLocation(Location.CathedralOfLearning));
+	}
+		
+	@Test
+	public void testProfessor3() {
+		Professor dummy = new Professor();
+		assertTrue(dummy.prefersLocation(Location.Downtown));
+	}
+		
+	@Test
+	public void testProfessorr4() {
+		Professor dummy = new Professor();
+		assertTrue(dummy.prefersLocation(Location.SquirrelHill));
+	}	
+	
 	//A Business Person prefers Squirrel Hill and Downtown - following 2 tests
 	//Create a new Business Person
 	//Ensure the prefersLocation method returns true for Squirrel Hill and Downtown
@@ -69,6 +96,27 @@ public class CitySimTest {
 	public void testBusinessPerson2() {
 		BusinessPerson dummy = new BusinessPerson();
         assertTrue(dummy.prefersLocation(Location.Downtown));
+	}
+	
+	//A Student prefers Squirrel Hill and Downtown - following 3 tests
+	//Create a new Student
+	//Ensure the prefersLocation method returns true for Squirrel Hill, The Point and Downtown
+	@Test
+	public void testStudent1() {
+		Student dummy = new Student();
+	    assertTrue(dummy.prefersLocation(Location.SquirrelHill));
+	}
+		
+	@Test
+	public void testStudent2() {
+		Student dummy = new Student();
+	    assertTrue(dummy.prefersLocation(Location.Downtown));
+	}
+		
+	@Test
+	public void testStudent3() {
+		Student dummy = new Student();
+	    assertTrue(dummy.prefersLocation(Location.ThePoint));
 	}
 	
 	
