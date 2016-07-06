@@ -151,4 +151,26 @@ public class HoodPopperTest {
 			}
 		}
 		
+		// Given that I have typed some Ruby code with multiplication in it
+		// When I click on the Parse button
+		// Then I see should not see the "*"
+		@Test
+		public void testParseOperator() {
+												
+			driver.findElement(By.id("code_code")).sendKeys("variable1 = 5\nb = 6\nc = a + (b * 4)");;
+													
+			WebElement submitButton = driver.findElement(By.xpath("(//input[@name='commit'])[2]"));
+			submitButton.click();
+													
+			try {
+				WebElement e = driver.findElement(By.tagName("code"));
+				String elementText = e.getText();
+				assertTrue(elementText.contains("*"));
+			} catch (NoSuchElementException nseex) {
+				fail();
+			}
+		}
+		
+		
+		
 }
